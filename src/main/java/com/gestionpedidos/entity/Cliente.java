@@ -17,7 +17,7 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Pedido> pedidos;
 
-    // Constructores, getters y setters
+
     public Cliente() {}
 
     public Cliente(String nombre, String direccion, String email) {

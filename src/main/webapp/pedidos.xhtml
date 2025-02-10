@@ -26,8 +26,8 @@
             #{pedido.cliente.nombre}
         </h:column>
         <h:column>
-            <f:facet name="header">Total</f:facet>
-            #{pedidoController.calcularTotal(pedido)}
+            <f:facet name="header">Productos</f:facet>
+            #{productoController.obtenerProductos()}
         </h:column>
     </h:dataTable>
 

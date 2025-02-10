@@ -7,7 +7,7 @@
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:gestion_pedidos.db"/>
-            <!-- Se le indica a JPA que cree el esquema directamente en la base de datos -->
+
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
         </properties>
     </persistence-unit>

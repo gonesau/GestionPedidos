@@ -21,7 +21,7 @@ public class ProductoController implements Serializable {
 
     public void agregarProducto() {
         productoService.agregarProducto(producto);
-        producto = new Producto(); // Limpiar el formulario
+        producto = new Producto();
     }
 
     public List<Producto> obtenerProductos() {

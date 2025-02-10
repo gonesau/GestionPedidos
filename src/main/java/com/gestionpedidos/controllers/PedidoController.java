@@ -22,7 +22,7 @@ public class PedidoController implements Serializable {
 
     public void agregarPedido() {
         pedidoService.agregarPedido(pedido);
-        pedido = new Pedido(); // Limpiar el formulario
+        pedido = new Pedido();
     }
 
     public List<Pedido> obtenerPedidos() {

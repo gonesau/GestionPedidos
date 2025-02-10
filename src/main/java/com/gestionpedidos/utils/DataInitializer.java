@@ -47,6 +47,6 @@ public class DataInitializer {
         Pedido pedido1 = new Pedido(new Date(), cliente1, Arrays.asList(producto1, producto2));
         pedidoService.agregarPedido(pedido1);
 
-        System.out.println("📌 Datos inicializados correctamente.");
+        System.out.println("Datos inicializados.");
     }
 }
