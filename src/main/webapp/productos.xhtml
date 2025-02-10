@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Productos - Gestión de Pedidos</title>
+</h:head>
+
+<h:body>
+    <h1>Lista de Productos</h1>
+
+    <h:dataTable value="#{productoController.obtenerProductos()}" var="producto" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{producto.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Nombre</f:facet>
+            #{producto.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Descripción</f:facet>
+            #{producto.descripcion}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Precio</f:facet>
+            #{producto.precio}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Stock</f:facet>
+            #{producto.stock}
+        </h:column>
+    </h:dataTable>
+
+    <h:link value="Ver Pedidos" outcome="pedidos.xhtml"/>
+</h:body>
 </html>

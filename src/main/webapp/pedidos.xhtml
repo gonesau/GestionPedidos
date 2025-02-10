@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Pedidos - Gestión de Pedidos</title>
+</h:head>
+
+<h:body>
+    <h1>Lista de Pedidos</h1>
+
+    <h:dataTable value="#{pedidoController.obtenerPedidos()}" var="pedido" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{pedido.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Fecha</f:facet>
+            #{pedido.fecha}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Cliente</f:facet>
+            #{pedido.cliente.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Total</f:facet>
+            #{pedidoController.calcularTotal(pedido)}
+        </h:column>
+    </h:dataTable>
+
+    <h:link value="Ver Clientes" outcome="clientes.xhtml"/>
+    <h:link value="Ver Productos" outcome="productos.xhtml"/>
+</h:body>
 </html>
